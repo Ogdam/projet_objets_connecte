@@ -12,7 +12,16 @@ class PluginTrajet:
             return self.query(word)
         return "Je ne comprend pas la demande."
 
-    def query(self, word        
+    def query(self, word):
+        tranport = self.getPublicTransportBest(word)
+        return "trajet"
+
+    def parseWord(self, word):
+        x = word.title()
+        tab= x.split()
+        return "_".join(tab)
+
+    def getPublicTransportBest(self, word):
         g = geocoder.ip('me')
         dlat, dlong = g.latlng
         word = word.replace('_', ' ')
@@ -30,11 +39,4 @@ class PluginTrajet:
         trajet = r['journeys'][0]
         trajet.pop('links')
         trajet.pop('calendars')
-        print(trajet)
-
-        return "trajet"
-
-    def parseWord(self, word):
-        x = word.title()
-        tab= x.split()
-        return "_".join(tab)
+        return trajet
