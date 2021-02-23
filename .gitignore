@@ -1,0 +1,5 @@
+server/_pycache_/
+.vscode/
+
+# macOS
+.DS_Store

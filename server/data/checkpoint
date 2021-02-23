@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/quarks/Master/M2/domotique/merryhome/server/data/model.tflearn"
+all_model_checkpoint_paths: "/home/quarks/Master/M2/domotique/merryhome/server/data/model.tflearn"

@@ -1,0 +1,8 @@
+{"intents":[
+        {"tag":"time",
+            "patterns":["Il est quelle heure?", "Quelle heure est-il", "Donne moi l'heure"],
+            "responses":["heure"],
+            "context_set":""
+        }
+    ]
+}

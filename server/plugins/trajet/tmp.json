@@ -1,0 +1,1860 @@
+{
+  'status': '',
+  'distances': {
+    'taxi': 0,
+    'car': 0,
+    'walking': 963,
+    'bike': 0,
+    'ridesharing': 0
+  },
+  'tags': ['walking', 'ecologic'],
+  'nb_transfers': 1,
+  'durations': {
+    'taxi': 0,
+    'walking': 1401,
+    'car': 0,
+    'ridesharing': 0,
+    'bike': 0,
+    'total': 3381
+  },
+  'arrival_date_time': '20210223T125936',
+  'departure_date_time': '20210223T120315',
+  'requested_date_time': '20210223T115952',
+  'fare': {
+    'found': True,
+    'total': {
+      'currency': 'centime',
+      'value': '190.0'
+    },
+    'links': [{
+      'internal': True,
+      'type': 'ticket',
+      'id': 'ticket_3_0',
+      'rel': 'tickets',
+      'templated': False
+    }]
+  },
+  'co2_emission': {
+    'value': 36.966,
+    'unit': 'gEC'
+  },
+  'type': 'best',
+  'duration': 3381,
+  'sections': [{
+    'from': {
+      'embedded_type': 'address',
+      'distance': '27',
+      'name': '5 Rue Sainte-Sophie (Asnières-sur-Seine)',
+      'address': {
+        'name': '5 Rue Sainte-Sophie',
+        'house_number': 5,
+        'coord': {
+          'lat': '48.916803',
+          'lon': '2.283644'
+        },
+        'label': '5 Rue Sainte-Sophie (Asnières-sur-Seine)',
+        'administrative_regions': [{
+          'insee': '92',
+          'name': 'Hauts-de-Seine',
+          'level': 6,
+          'coord': {
+            'lat': '48.8924273',
+            'lon': '2.2071267'
+          },
+          'label': 'Hauts-de-Seine, Île-de-France, France',
+          'id': 'admin:osm:relation:7449'
+        }, {
+          'insee': '11',
+          'name': 'Île-de-France',
+          'level': 4,
+          'coord': {
+            'lat': '48.8566969',
+            'lon': '2.3514616'
+          },
+          'label': 'Île-de-France, France',
+          'id': 'admin:osm:relation:8649'
+        }, {
+          'insee': '',
+          'name': 'France',
+          'level': 2,
+          'coord': {
+            'lat': '48.8566969',
+            'lon': '2.3514616'
+          },
+          'label': 'France',
+          'id': 'admin:osm:relation:2202162'
+        }, {
+          'insee': '92004',
+          'name': 'Asnières-sur-Seine',
+          'level': 8,
+          'coord': {
+            'lat': '48.9105948',
+            'lon': '2.2890454'
+          },
+          'label': 'Asnières-sur-Seine (92600), Hauts-de-Seine, Île-de-France, France',
+          'id': 'admin:fr:92004',
+          'zip_code': '92600'
+        }],
+        'id': '2.283644;48.916803'
+      },
+      'quality': 0,
+      'id': '2.283644;48.916803'
+    },
+    'links': [],
+    'arrival_date_time': '20210223T121700',
+    'co2_emission': {
+      'value': 0.0,
+      'unit': ''
+    },
+    'to': {
+      'embedded_type': 'stop_point',
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '462953'
+        }, {
+          'type': 'external_code',
+          'value': '59613'
+        }, {
+          'type': 'source',
+          'value': '59613'
+        }],
+        'name': 'Gabriel-Péri',
+        'links': [],
+        'coord': {
+          'lat': '48.916575',
+          'lon': '2.294329'
+        },
+        'label': 'Gabriel-Péri (Asnières-sur-Seine)',
+        'equipments': [],
+        'administrative_regions': [{
+          'insee': '92004',
+          'name': 'Asnières-sur-Seine',
+          'level': 8,
+          'coord': {
+            'lat': '48.910594',
+            'lon': '2.289045'
+          },
+          'label': 'Asnières-sur-Seine (92600)',
+          'id': 'admin:fr:92004',
+          'zip_code': '92600'
+        }, {
+          'insee': '',
+          'name': 'Voltaire',
+          'level': 10,
+          'coord': {
+            'lat': '48.917',
+            'lon': '2.28632'
+          },
+          'label': 'Voltaire',
+          'id': 'admin:osm:relation:11788674',
+          'zip_code': ''
+        }],
+        'fare_zone': {
+          'name': '2'
+        },
+        'id': 'stop_point:0:SP:59613',
+        'stop_area': {
+          'codes': [{
+            'type': 'external_code',
+            'value': '59613'
+          }, {
+            'type': 'source',
+            'value': '59613'
+          }],
+          'name': 'Gabriel-Péri',
+          'links': [],
+          'coord': {
+            'lat': '48.916048',
+            'lon': '2.294466'
+          },
+          'label': 'Gabriel-Péri (Asnières-sur-Seine) (Gennevilliers)',
+          'timezone': 'Europe/Paris',
+          'id': 'stop_area:0:SA:59613'
+        }
+      },
+      'quality': 0,
+      'name': 'Gabriel-Péri (Asnières-sur-Seine)',
+      'id': 'stop_point:0:SP:59613'
+    },
+    'departure_date_time': '20210223T120315',
+    'geojson': {
+      'type': 'LineString',
+      'properties': [{
+        'length': 923
+      }],
+      'coordinates': [
+        [2.283684112, 48.9168272228],
+        [2.283677, 48.916839],
+        [2.283677, 48.916839],
+        [2.283677, 48.916839],
+        [2.28419, 48.916975],
+        [2.28419, 48.916975],
+        [2.284453, 48.916768],
+        [2.284613, 48.916615],
+        [2.284613, 48.916615],
+        [2.284869, 48.916358],
+        [2.284942, 48.916285],
+        [2.284942, 48.916285],
+        [2.285086, 48.91614],
+        [2.285086, 48.91614],
+        [2.285277, 48.915948],
+        [2.285277, 48.915948],
+        [2.285405, 48.915813],
+        [2.285458, 48.915759],
+        [2.285458, 48.915759],
+        [2.28663, 48.916278],
+        [2.28663, 48.916278],
+        [2.287823, 48.916814],
+        [2.287856, 48.916828],
+        [2.287856, 48.916828],
+        [2.287941, 48.916816],
+        [2.287941, 48.916816],
+        [2.287998, 48.916824],
+        [2.287998, 48.916824],
+        [2.288103, 48.916867],
+        [2.288103, 48.916867],
+        [2.288153, 48.91685],
+        [2.28883, 48.916626],
+        [2.288853, 48.916619],
+        [2.288853, 48.916619],
+        [2.288931, 48.916595],
+        [2.289014, 48.916569],
+        [2.289014, 48.916569],
+        [2.289136, 48.916531],
+        [2.289136, 48.916531],
+        [2.289166, 48.916522],
+        [2.289441, 48.916442],
+        [2.28946, 48.916436],
+        [2.289519, 48.916419],
+        [2.289519, 48.916419],
+        [2.289666, 48.916375],
+        [2.289666, 48.916375],
+        [2.289691, 48.916367],
+        [2.289707, 48.916362],
+        [2.290154, 48.916227],
+        [2.290154, 48.916227],
+        [2.290285, 48.916185],
+        [2.290285, 48.916185],
+        [2.290473, 48.916128],
+        [2.290473, 48.916128],
+        [2.290606, 48.916089],
+        [2.290606, 48.916089],
+        [2.290717, 48.916056],
+        [2.290717, 48.916056],
+        [2.290771, 48.916039],
+        [2.290771, 48.916039],
+        [2.290999, 48.915999],
+        [2.291232, 48.915928],
+        [2.291347, 48.915894],
+        [2.291347, 48.915894],
+        [2.291452, 48.915863],
+        [2.291817, 48.915752],
+        [2.291862, 48.915738],
+        [2.291862, 48.915738],
+        [2.291981, 48.915765],
+        [2.292121, 48.915828],
+        [2.292121, 48.915828],
+        [2.293725, 48.916542],
+        [2.293725, 48.916542],
+        [2.293837, 48.916592],
+        [2.293837, 48.916592],
+        [2.293891, 48.91662],
+        [2.293891, 48.91662],
+        [2.2941, 48.916491]
+      ]
+    },
+    'duration': 825,
+    'path': [{
+      'duration': 1,
+      'length': 1,
+      'direction': 0,
+      'name': 'Rue Sainte-Sophie'
+    }, {
+      'duration': 36,
+      'length': 40,
+      'direction': 0,
+      'name': 'Rue Courte'
+    }, {
+      'duration': 145,
+      'length': 162,
+      'direction': 74,
+      'name': 'Rue du Révérend Père Christian Gilbert'
+    }, {
+      'duration': 189,
+      'length': 212,
+      'direction': -91,
+      'name': "Rue de l'Alma"
+    }, {
+      'duration': 5,
+      'length': 6,
+      'direction': 45,
+      'name': ''
+    }, {
+      'duration': 3,
+      'length': 3,
+      'direction': -24,
+      'name': ''
+    }, {
+      'duration': 8,
+      'length': 9,
+      'direction': -20,
+      'name': ''
+    }, {
+      'duration': 263,
+      'length': 295,
+      'direction': 59,
+      'name': 'Boulevard Voltaire'
+    }, {
+      'duration': 157,
+      'length': 176,
+      'direction': -53,
+      'name': 'Rue Louis Melotte'
+    }, {
+      'duration': 18,
+      'length': 20,
+      'direction': 0,
+      'name': 'Rue des Bas'
+    }],
+    'type': 'street_network',
+    'id': 'PePPU8eoQgX2DcRfXzvu7U_0',
+    'mode': 'walking'
+  }, {
+    'from': {
+      'embedded_type': 'stop_point',
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '462953'
+        }, {
+          'type': 'external_code',
+          'value': '59613'
+        }, {
+          'type': 'source',
+          'value': '59613'
+        }],
+        'name': 'Gabriel-Péri',
+        'links': [],
+        'coord': {
+          'lat': '48.916575',
+          'lon': '2.294329'
+        },
+        'label': 'Gabriel-Péri (Asnières-sur-Seine)',
+        'equipments': [],
+        'administrative_regions': [{
+          'insee': '92004',
+          'name': 'Asnières-sur-Seine',
+          'level': 8,
+          'coord': {
+            'lat': '48.910594',
+            'lon': '2.289045'
+          },
+          'label': 'Asnières-sur-Seine (92600)',
+          'id': 'admin:fr:92004',
+          'zip_code': '92600'
+        }, {
+          'insee': '',
+          'name': 'Voltaire',
+          'level': 10,
+          'coord': {
+            'lat': '48.917',
+            'lon': '2.28632'
+          },
+          'label': 'Voltaire',
+          'id': 'admin:osm:relation:11788674',
+          'zip_code': ''
+        }],
+        'fare_zone': {
+          'name': '2'
+        },
+        'id': 'stop_point:0:SP:59613',
+        'stop_area': {
+          'codes': [{
+            'type': 'external_code',
+            'value': '59613'
+          }, {
+            'type': 'source',
+            'value': '59613'
+          }],
+          'name': 'Gabriel-Péri',
+          'links': [],
+          'coord': {
+            'lat': '48.916048',
+            'lon': '2.294466'
+          },
+          'label': 'Gabriel-Péri (Asnières-sur-Seine) (Gennevilliers)',
+          'timezone': 'Europe/Paris',
+          'id': 'stop_area:0:SA:59613'
+        }
+      },
+      'quality': 0,
+      'name': 'Gabriel-Péri (Asnières-sur-Seine)',
+      'id': 'stop_point:0:SP:59613'
+    },
+    'links': [{
+      'type': 'vehicle_journey',
+      'id': 'vehicle_journey:0:123570507-1'
+    }, {
+      'type': 'line',
+      'id': 'line:0:100110013:13'
+    }, {
+      'type': 'route',
+      'id': 'route:0:1001100130001R'
+    }, {
+      'type': 'commercial_mode',
+      'id': 'commercial_mode:Metro'
+    }, {
+      'type': 'physical_mode',
+      'id': 'physical_mode:Metro'
+    }, {
+      'type': 'network',
+      'id': 'network:0:439'
+    }, {
+      'internal': True,
+      'type': 'ticket',
+      'id': 'ticket_3_0',
+      'rel': 'tickets',
+      'templated': False
+    }],
+    'arrival_date_time': '20210223T124000',
+    'additional_informations': ['regular'],
+    'co2_emission': {
+      'value': 28.881,
+      'unit': 'gEC'
+    },
+    'display_informations': {
+      'direction': 'Châtillon Montrouge (Châtillon)',
+      'code': '13',
+      'network': 'METRO',
+      'links': [],
+      'color': '6EC4E8',
+      'name': 'Châtillon Montrouge - Saint-Denis-Université',
+      'physical_mode': 'Métro',
+      'headsign': 'Châtillon Montrouge',
+      'label': '13',
+      'equipments': [],
+      'text_color': '000000',
+      'trip_short_name': 'Châtillon Montrouge',
+      'commercial_mode': 'Métro',
+      'description': ''
+    },
+    'to': {
+      'embedded_type': 'stop_point',
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '22157'
+        }, {
+          'type': 'external_code',
+          'value': '59268'
+        }, {
+          'type': 'source',
+          'value': '59268'
+        }],
+        'name': 'Montparnasse-Bienvenue',
+        'links': [],
+        'coord': {
+          'lat': '48.842077',
+          'lon': '2.32101'
+        },
+        'label': 'Montparnasse-Bienvenue (Paris)',
+        'equipments': [],
+        'administrative_regions': [{
+          'insee': '75056',
+          'name': 'Paris',
+          'level': 8,
+          'coord': {
+            'lat': '48.856696',
+            'lon': '2.351461'
+          },
+          'label': 'Paris (75000-75116)',
+          'id': 'admin:fr:75056',
+          'zip_code': '75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116'
+        }, {
+          'insee': '75115',
+          'name': 'Paris 15e Arrondissement',
+          'level': 9,
+          'coord': {
+            'lat': '48.84137',
+            'lon': '2.300382'
+          },
+          'label': 'Paris 15e Arrondissement (75015)',
+          'id': 'admin:fr:75115',
+          'zip_code': '75015'
+        }, {
+          'insee': '',
+          'name': 'Quartier Necker',
+          'level': 10,
+          'coord': {
+            'lat': '48.842685',
+            'lon': '2.310796'
+          },
+          'label': 'Quartier Necker (75015)',
+          'id': 'admin:osm:relation:2191804',
+          'zip_code': '75015'
+        }],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59268',
+        'stop_area': {
+          'codes': [{
+            'type': 'external_code',
+            'value': '59259'
+          }, {
+            'type': 'source',
+            'value': '59259'
+          }],
+          'name': 'Montparnasse-Bienvenue',
+          'links': [],
+          'coord': {
+            'lat': '48.842501',
+            'lon': '2.321598'
+          },
+          'label': 'Montparnasse-Bienvenue (Paris)',
+          'timezone': 'Europe/Paris',
+          'id': 'stop_area:0:SA:59259'
+        }
+      },
+      'quality': 0,
+      'name': 'Montparnasse-Bienvenue (Paris)',
+      'id': 'stop_point:0:SP:59268'
+    },
+    'base_arrival_date_time': '20210223T124000',
+    'base_departure_date_time': '20210223T121700',
+    'departure_date_time': '20210223T121700',
+    'geojson': {
+      'type': 'LineString',
+      'properties': [{
+        'length': 9627
+      }],
+      'coordinates': [
+        [2.294329, 48.916575],
+        [2.305368, 48.904005],
+        [2.313566, 48.894436],
+        [2.320191, 48.890627],
+        [2.325725, 48.887437],
+        [2.327266, 48.883204],
+        [2.326858, 48.879537],
+        [2.324188, 48.876068],
+        [2.316041, 48.87346],
+        [2.314191, 48.867367],
+        [2.314548, 48.860851],
+        [2.314754, 48.856393],
+        [2.31443, 48.850983],
+        [2.316542, 48.846992],
+        [2.32101, 48.842077]
+      ]
+    },
+    'duration': 1380,
+    'type': 'public_transport',
+    'id': 'section_4_0',
+    'data_freshness': 'base_schedule',
+    'stop_date_times': [{
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '462953'
+        }, {
+          'type': 'external_code',
+          'value': '59613'
+        }, {
+          'type': 'source',
+          'value': '59613'
+        }],
+        'name': 'Gabriel-Péri',
+        'links': [],
+        'coord': {
+          'lat': '48.916575',
+          'lon': '2.294329'
+        },
+        'label': 'Gabriel-Péri (Asnières-sur-Seine)',
+        'equipments': [],
+        'fare_zone': {
+          'name': '2'
+        },
+        'id': 'stop_point:0:SP:59613'
+      },
+      'links': [],
+      'arrival_date_time': '20210223T121700',
+      'additional_informations': [],
+      'departure_date_time': '20210223T121700',
+      'base_arrival_date_time': '20210223T121700',
+      'base_departure_date_time': '20210223T121700'
+    }, {
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '22238'
+        }, {
+          'type': 'external_code',
+          'value': '59583'
+        }, {
+          'type': 'source',
+          'value': '59583'
+        }],
+        'name': 'Mairie de Clichy',
+        'links': [],
+        'coord': {
+          'lat': '48.904005',
+          'lon': '2.305368'
+        },
+        'label': 'Mairie de Clichy (Clichy)',
+        'equipments': [],
+        'fare_zone': {
+          'name': '2'
+        },
+        'id': 'stop_point:0:SP:59583'
+      },
+      'links': [],
+      'arrival_date_time': '20210223T121900',
+      'additional_informations': [],
+      'departure_date_time': '20210223T121900',
+      'base_arrival_date_time': '20210223T121900',
+      'base_departure_date_time': '20210223T121900'
+    }, {
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '22219'
+        }, {
+          'type': 'external_code',
+          'value': '59581'
+        }, {
+          'type': 'source',
+          'value': '59581'
+        }],
+        'name': 'Porte de Clichy',
+        'links': [],
+        'coord': {
+          'lat': '48.894436',
+          'lon': '2.313566'
+        },
+        'label': 'Porte de Clichy (Paris)',
+        'equipments': [],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59581'
+      },
+      'links': [],
+      'arrival_date_time': '20210223T122100',
+      'additional_informations': [],
+      'departure_date_time': '20210223T122100',
+      'base_arrival_date_time': '20210223T122100',
+      'base_departure_date_time': '20210223T122100'
+    }, {
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '22231'
+        }, {
+          'type': 'external_code',
+          'value': '59535'
+        }, {
+          'type': 'source',
+          'value': '59535'
+        }],
+        'name': 'Brochant',
+        'links': [],
+        'coord': {
+          'lat': '48.890627',
+          'lon': '2.320191'
+        },
+        'label': 'Brochant (Paris)',
+        'equipments': [],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59535'
+      },
+      'links': [],
+      'arrival_date_time': '20210223T122300',
+      'additional_informations': [],
+      'departure_date_time': '20210223T122300',
+      'base_arrival_date_time': '20210223T122300',
+      'base_departure_date_time': '20210223T122300'
+    }, {
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '22227'
+        }, {
+          'type': 'external_code',
+          'value': '59533'
+        }, {
+          'type': 'source',
+          'value': '59533'
+        }],
+        'name': 'La Fourche',
+        'links': [],
+        'coord': {
+          'lat': '48.887437',
+          'lon': '2.325725'
+        },
+        'label': 'La Fourche (Paris)',
+        'equipments': [],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59533'
+      },
+      'links': [],
+      'arrival_date_time': '20210223T122400',
+      'additional_informations': [],
+      'departure_date_time': '20210223T122400',
+      'base_arrival_date_time': '20210223T122400',
+      'base_departure_date_time': '20210223T122400'
+    }, {
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '463253'
+        }, {
+          'type': 'external_code',
+          'value': '59432'
+        }, {
+          'type': 'source',
+          'value': '59432'
+        }],
+        'name': 'Place de Clichy',
+        'links': [],
+        'coord': {
+          'lat': '48.883204',
+          'lon': '2.327266'
+        },
+        'label': 'Place de Clichy (Paris)',
+        'equipments': [],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59432'
+      },
+      'links': [],
+      'arrival_date_time': '20210223T122600',
+      'additional_informations': [],
+      'departure_date_time': '20210223T122600',
+      'base_arrival_date_time': '20210223T122600',
+      'base_departure_date_time': '20210223T122600'
+    }, {
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '463066'
+        }, {
+          'type': 'external_code',
+          'value': '59606'
+        }, {
+          'type': 'source',
+          'value': '59606'
+        }],
+        'name': 'Liège',
+        'links': [],
+        'coord': {
+          'lat': '48.879537',
+          'lon': '2.326858'
+        },
+        'label': 'Liège (Paris)',
+        'equipments': [],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59606'
+      },
+      'links': [],
+      'arrival_date_time': '20210223T122700',
+      'additional_informations': [],
+      'departure_date_time': '20210223T122700',
+      'base_arrival_date_time': '20210223T122700',
+      'base_departure_date_time': '20210223T122700'
+    }, {
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '22218'
+        }, {
+          'type': 'external_code',
+          'value': '59223'
+        }, {
+          'type': 'source',
+          'value': '59223'
+        }],
+        'name': 'Saint-Lazare',
+        'links': [],
+        'coord': {
+          'lat': '48.876068',
+          'lon': '2.324188'
+        },
+        'label': 'Saint-Lazare (Paris)',
+        'equipments': [],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59223'
+      },
+      'links': [],
+      'arrival_date_time': '20210223T122900',
+      'additional_informations': [],
+      'departure_date_time': '20210223T122900',
+      'base_arrival_date_time': '20210223T122900',
+      'base_departure_date_time': '20210223T122900'
+    }, {
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '22224'
+        }, {
+          'type': 'external_code',
+          'value': '59502'
+        }, {
+          'type': 'source',
+          'value': '59502'
+        }],
+        'name': 'Miromesnil',
+        'links': [],
+        'coord': {
+          'lat': '48.87346',
+          'lon': '2.316041'
+        },
+        'label': 'Miromesnil (Paris)',
+        'equipments': [],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59502'
+      },
+      'links': [],
+      'arrival_date_time': '20210223T123100',
+      'additional_informations': [],
+      'departure_date_time': '20210223T123100',
+      'base_arrival_date_time': '20210223T123100',
+      'base_departure_date_time': '20210223T123100'
+    }, {
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '463011'
+        }, {
+          'type': 'external_code',
+          'value': '59611'
+        }, {
+          'type': 'source',
+          'value': '59611'
+        }],
+        'name': 'Champs-Elysées-Clémenceau',
+        'links': [],
+        'coord': {
+          'lat': '48.867367',
+          'lon': '2.314191'
+        },
+        'label': 'Champs-Elysées-Clémenceau (Paris)',
+        'equipments': [],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59611'
+      },
+      'links': [],
+      'arrival_date_time': '20210223T123300',
+      'additional_informations': [],
+      'departure_date_time': '20210223T123300',
+      'base_arrival_date_time': '20210223T123300',
+      'base_departure_date_time': '20210223T123300'
+    }, {
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '22185'
+        }, {
+          'type': 'external_code',
+          'value': '59479'
+        }, {
+          'type': 'source',
+          'value': '59479'
+        }],
+        'name': 'Invalides',
+        'links': [],
+        'coord': {
+          'lat': '48.860851',
+          'lon': '2.314548'
+        },
+        'label': 'Invalides (Paris)',
+        'equipments': [],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59479'
+      },
+      'links': [],
+      'arrival_date_time': '20210223T123500',
+      'additional_informations': [],
+      'departure_date_time': '20210223T123500',
+      'base_arrival_date_time': '20210223T123500',
+      'base_departure_date_time': '20210223T123500'
+    }, {
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '22226'
+        }, {
+          'type': 'external_code',
+          'value': '59531'
+        }, {
+          'type': 'source',
+          'value': '59531'
+        }],
+        'name': 'Varenne',
+        'links': [],
+        'coord': {
+          'lat': '48.856393',
+          'lon': '2.314754'
+        },
+        'label': 'Varenne (Paris)',
+        'equipments': [],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59531'
+      },
+      'links': [],
+      'arrival_date_time': '20210223T123600',
+      'additional_informations': [],
+      'departure_date_time': '20210223T123600',
+      'base_arrival_date_time': '20210223T123600',
+      'base_departure_date_time': '20210223T123600'
+    }, {
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '463303'
+        }, {
+          'type': 'external_code',
+          'value': '59524'
+        }, {
+          'type': 'source',
+          'value': '59524'
+        }],
+        'name': 'Saint-François-Xavier',
+        'links': [],
+        'coord': {
+          'lat': '48.850983',
+          'lon': '2.31443'
+        },
+        'label': 'Saint-François-Xavier (Paris)',
+        'equipments': [],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59524'
+      },
+      'links': [],
+      'arrival_date_time': '20210223T123700',
+      'additional_informations': [],
+      'departure_date_time': '20210223T123700',
+      'base_arrival_date_time': '20210223T123700',
+      'base_departure_date_time': '20210223T123700'
+    }, {
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '22229'
+        }, {
+          'type': 'external_code',
+          'value': '59396'
+        }, {
+          'type': 'source',
+          'value': '59396'
+        }],
+        'name': 'Duroc',
+        'links': [],
+        'coord': {
+          'lat': '48.846992',
+          'lon': '2.316542'
+        },
+        'label': 'Duroc (Paris)',
+        'equipments': [],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59396'
+      },
+      'links': [],
+      'arrival_date_time': '20210223T123800',
+      'additional_informations': [],
+      'departure_date_time': '20210223T123800',
+      'base_arrival_date_time': '20210223T123800',
+      'base_departure_date_time': '20210223T123800'
+    }, {
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '22157'
+        }, {
+          'type': 'external_code',
+          'value': '59268'
+        }, {
+          'type': 'source',
+          'value': '59268'
+        }],
+        'name': 'Montparnasse-Bienvenue',
+        'links': [],
+        'coord': {
+          'lat': '48.842077',
+          'lon': '2.32101'
+        },
+        'label': 'Montparnasse-Bienvenue (Paris)',
+        'equipments': [],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59268'
+      },
+      'links': [],
+      'arrival_date_time': '20210223T124000',
+      'additional_informations': [],
+      'departure_date_time': '20210223T124000',
+      'base_arrival_date_time': '20210223T124000',
+      'base_departure_date_time': '20210223T124000'
+    }]
+  }, {
+    'from': {
+      'embedded_type': 'stop_point',
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '22157'
+        }, {
+          'type': 'external_code',
+          'value': '59268'
+        }, {
+          'type': 'source',
+          'value': '59268'
+        }],
+        'name': 'Montparnasse-Bienvenue',
+        'links': [],
+        'coord': {
+          'lat': '48.842077',
+          'lon': '2.32101'
+        },
+        'label': 'Montparnasse-Bienvenue (Paris)',
+        'equipments': [],
+        'administrative_regions': [{
+          'insee': '75056',
+          'name': 'Paris',
+          'level': 8,
+          'coord': {
+            'lat': '48.856696',
+            'lon': '2.351461'
+          },
+          'label': 'Paris (75000-75116)',
+          'id': 'admin:fr:75056',
+          'zip_code': '75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116'
+        }, {
+          'insee': '75115',
+          'name': 'Paris 15e Arrondissement',
+          'level': 9,
+          'coord': {
+            'lat': '48.84137',
+            'lon': '2.300382'
+          },
+          'label': 'Paris 15e Arrondissement (75015)',
+          'id': 'admin:fr:75115',
+          'zip_code': '75015'
+        }, {
+          'insee': '',
+          'name': 'Quartier Necker',
+          'level': 10,
+          'coord': {
+            'lat': '48.842685',
+            'lon': '2.310796'
+          },
+          'label': 'Quartier Necker (75015)',
+          'id': 'admin:osm:relation:2191804',
+          'zip_code': '75015'
+        }],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59268',
+        'stop_area': {
+          'codes': [{
+            'type': 'external_code',
+            'value': '59259'
+          }, {
+            'type': 'source',
+            'value': '59259'
+          }],
+          'name': 'Montparnasse-Bienvenue',
+          'links': [],
+          'coord': {
+            'lat': '48.842501',
+            'lon': '2.321598'
+          },
+          'label': 'Montparnasse-Bienvenue (Paris)',
+          'timezone': 'Europe/Paris',
+          'id': 'stop_area:0:SA:59259'
+        }
+      },
+      'quality': 0,
+      'name': 'Montparnasse-Bienvenue (Paris)',
+      'id': 'stop_point:0:SP:59268'
+    },
+    'links': [],
+    'arrival_date_time': '20210223T124900',
+    'co2_emission': {
+      'value': 0.0,
+      'unit': ''
+    },
+    'to': {
+      'embedded_type': 'stop_point',
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '22143'
+        }, {
+          'type': 'external_code',
+          'value': '59259'
+        }, {
+          'type': 'source',
+          'value': '59259'
+        }],
+        'name': 'Montparnasse-Bienvenue',
+        'links': [],
+        'coord': {
+          'lat': '48.844189',
+          'lon': '2.324441'
+        },
+        'label': 'Montparnasse-Bienvenue (Paris)',
+        'equipments': [],
+        'administrative_regions': [{
+          'insee': '75056',
+          'name': 'Paris',
+          'level': 8,
+          'coord': {
+            'lat': '48.856696',
+            'lon': '2.351461'
+          },
+          'label': 'Paris (75000-75116)',
+          'id': 'admin:fr:75056',
+          'zip_code': '75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116'
+        }, {
+          'insee': '75106',
+          'name': 'Paris 6e Arrondissement',
+          'level': 9,
+          'coord': {
+            'lat': '48.850433',
+            'lon': '2.33295'
+          },
+          'label': 'Paris 6e Arrondissement (75006)',
+          'id': 'admin:fr:75106',
+          'zip_code': '75006'
+        }, {
+          'insee': '',
+          'name': 'Quartier Notre-Dame-des-Champs',
+          'level': 10,
+          'coord': {
+            'lat': '48.846416',
+            'lon': '2.327367'
+          },
+          'label': 'Quartier Notre-Dame-des-Champs (75006)',
+          'id': 'admin:osm:relation:2188183',
+          'zip_code': '75006'
+        }],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59259',
+        'stop_area': {
+          'codes': [{
+            'type': 'external_code',
+            'value': '59259'
+          }, {
+            'type': 'source',
+            'value': '59259'
+          }],
+          'name': 'Montparnasse-Bienvenue',
+          'links': [],
+          'coord': {
+            'lat': '48.842501',
+            'lon': '2.321598'
+          },
+          'label': 'Montparnasse-Bienvenue (Paris)',
+          'timezone': 'Europe/Paris',
+          'id': 'stop_area:0:SA:59259'
+        }
+      },
+      'quality': 0,
+      'name': 'Montparnasse-Bienvenue (Paris)',
+      'id': 'stop_point:0:SP:59259'
+    },
+    'departure_date_time': '20210223T124000',
+    'geojson': {
+      'type': 'LineString',
+      'properties': [{
+        'length': 343
+      }],
+      'coordinates': [
+        [2.32101, 48.842077],
+        [2.324441, 48.844189]
+      ]
+    },
+    'duration': 540,
+    'transfer_type': 'walking',
+    'type': 'transfer',
+    'id': 'section_5_0'
+  }, {
+    'links': [],
+    'arrival_date_time': '20210223T125200',
+    'co2_emission': {
+      'value': 0.0,
+      'unit': ''
+    },
+    'departure_date_time': '20210223T124900',
+    'duration': 180,
+    'type': 'waiting',
+    'id': 'section_6_0'
+  }, {
+    'from': {
+      'embedded_type': 'stop_point',
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '22143'
+        }, {
+          'type': 'external_code',
+          'value': '59259'
+        }, {
+          'type': 'source',
+          'value': '59259'
+        }],
+        'name': 'Montparnasse-Bienvenue',
+        'links': [],
+        'coord': {
+          'lat': '48.844189',
+          'lon': '2.324441'
+        },
+        'label': 'Montparnasse-Bienvenue (Paris)',
+        'equipments': [],
+        'administrative_regions': [{
+          'insee': '75056',
+          'name': 'Paris',
+          'level': 8,
+          'coord': {
+            'lat': '48.856696',
+            'lon': '2.351461'
+          },
+          'label': 'Paris (75000-75116)',
+          'id': 'admin:fr:75056',
+          'zip_code': '75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116'
+        }, {
+          'insee': '75106',
+          'name': 'Paris 6e Arrondissement',
+          'level': 9,
+          'coord': {
+            'lat': '48.850433',
+            'lon': '2.33295'
+          },
+          'label': 'Paris 6e Arrondissement (75006)',
+          'id': 'admin:fr:75106',
+          'zip_code': '75006'
+        }, {
+          'insee': '',
+          'name': 'Quartier Notre-Dame-des-Champs',
+          'level': 10,
+          'coord': {
+            'lat': '48.846416',
+            'lon': '2.327367'
+          },
+          'label': 'Quartier Notre-Dame-des-Champs (75006)',
+          'id': 'admin:osm:relation:2188183',
+          'zip_code': '75006'
+        }],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59259',
+        'stop_area': {
+          'codes': [{
+            'type': 'external_code',
+            'value': '59259'
+          }, {
+            'type': 'source',
+            'value': '59259'
+          }],
+          'name': 'Montparnasse-Bienvenue',
+          'links': [],
+          'coord': {
+            'lat': '48.842501',
+            'lon': '2.321598'
+          },
+          'label': 'Montparnasse-Bienvenue (Paris)',
+          'timezone': 'Europe/Paris',
+          'id': 'stop_area:0:SA:59259'
+        }
+      },
+      'quality': 0,
+      'name': 'Montparnasse-Bienvenue (Paris)',
+      'id': 'stop_point:0:SP:59259'
+    },
+    'links': [{
+      'type': 'vehicle_journey',
+      'id': 'vehicle_journey:0:123486695-1'
+    }, {
+      'type': 'line',
+      'id': 'line:0:100110004:4'
+    }, {
+      'type': 'route',
+      'id': 'route:0:1001100040001A'
+    }, {
+      'type': 'commercial_mode',
+      'id': 'commercial_mode:Metro'
+    }, {
+      'type': 'physical_mode',
+      'id': 'physical_mode:Metro'
+    }, {
+      'type': 'network',
+      'id': 'network:0:439'
+    }, {
+      'internal': True,
+      'type': 'ticket',
+      'id': 'ticket_3_0',
+      'rel': 'tickets',
+      'templated': False
+    }],
+    'arrival_date_time': '20210223T125900',
+    'additional_informations': ['regular'],
+    'co2_emission': {
+      'value': 8.085,
+      'unit': 'gEC'
+    },
+    'display_informations': {
+      'direction': 'Mairie de Montrouge (Montrouge)',
+      'code': '4',
+      'network': 'METRO',
+      'links': [],
+      'color': 'CF009E',
+      'name': 'Porte de Clignancourt - Mairie de Montrouge',
+      'physical_mode': 'Métro',
+      'headsign': 'Mairie de Montrouge',
+      'label': '4',
+      'equipments': [],
+      'text_color': 'FFFFFF',
+      'trip_short_name': 'Mairie de Montrouge',
+      'commercial_mode': 'Métro',
+      'description': ''
+    },
+    'to': {
+      'embedded_type': 'stop_point',
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '22140'
+        }, {
+          'type': 'external_code',
+          'value': '59624'
+        }, {
+          'type': 'source',
+          'value': '59624'
+        }],
+        'name': "Porte d'Orléans (Général Leclerc)",
+        'links': [],
+        'coord': {
+          'lat': '48.822817',
+          'lon': '2.325073'
+        },
+        'label': "Porte d'Orléans (Général Leclerc) (Paris)",
+        'equipments': [],
+        'administrative_regions': [{
+          'insee': '75056',
+          'name': 'Paris',
+          'level': 8,
+          'coord': {
+            'lat': '48.856696',
+            'lon': '2.351461'
+          },
+          'label': 'Paris (75000-75116)',
+          'id': 'admin:fr:75056',
+          'zip_code': '75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116'
+        }, {
+          'insee': '75114',
+          'name': 'Paris 14e Arrondissement',
+          'level': 9,
+          'coord': {
+            'lat': '48.833058',
+            'lon': '2.326959'
+          },
+          'label': 'Paris 14e Arrondissement (75014)',
+          'id': 'admin:fr:75114',
+          'zip_code': '75014'
+        }, {
+          'insee': '',
+          'name': 'Quartier du Petit-Montrouge',
+          'level': 10,
+          'coord': {
+            'lat': '48.826652',
+            'lon': '2.326437'
+          },
+          'label': 'Quartier du Petit-Montrouge (75014)',
+          'id': 'admin:osm:relation:2191571',
+          'zip_code': '75014'
+        }],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59624',
+        'stop_area': {
+          'codes': [{
+            'type': 'external_code',
+            'value': '59624'
+          }, {
+            'type': 'source',
+            'value': '59624'
+          }],
+          'name': "Porte d'Orléans",
+          'links': [],
+          'coord': {
+            'lat': '48.822487',
+            'lon': '2.325488'
+          },
+          'label': "Porte d'Orléans (Paris)",
+          'timezone': 'Europe/Paris',
+          'id': 'stop_area:0:SA:59624'
+        }
+      },
+      'quality': 0,
+      'name': "Porte d'Orléans (Général Leclerc) (Paris)",
+      'id': 'stop_point:0:SP:59624'
+    },
+    'base_arrival_date_time': '20210223T125900',
+    'base_departure_date_time': '20210223T125200',
+    'departure_date_time': '20210223T125200',
+    'geojson': {
+      'type': 'LineString',
+      'properties': [{
+        'length': 2695
+      }],
+      'coordinates': [
+        [2.324441, 48.844189],
+        [2.328867, 48.84206],
+        [2.330474, 48.839157],
+        [2.332204, 48.834277],
+        [2.330407, 48.832192],
+        [2.326827, 48.828066],
+        [2.325073, 48.822817]
+      ]
+    },
+    'duration': 420,
+    'type': 'public_transport',
+    'id': 'section_7_0',
+    'data_freshness': 'base_schedule',
+    'stop_date_times': [{
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '22143'
+        }, {
+          'type': 'external_code',
+          'value': '59259'
+        }, {
+          'type': 'source',
+          'value': '59259'
+        }],
+        'name': 'Montparnasse-Bienvenue',
+        'links': [],
+        'coord': {
+          'lat': '48.844189',
+          'lon': '2.324441'
+        },
+        'label': 'Montparnasse-Bienvenue (Paris)',
+        'equipments': [],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59259'
+      },
+      'links': [],
+      'arrival_date_time': '20210223T125200',
+      'additional_informations': [],
+      'departure_date_time': '20210223T125200',
+      'base_arrival_date_time': '20210223T125200',
+      'base_departure_date_time': '20210223T125200'
+    }, {
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '463016'
+        }, {
+          'type': 'external_code',
+          'value': '59254'
+        }, {
+          'type': 'source',
+          'value': '59254'
+        }],
+        'name': 'Vavin',
+        'links': [],
+        'coord': {
+          'lat': '48.84206',
+          'lon': '2.328867'
+        },
+        'label': 'Vavin (Paris)',
+        'equipments': [],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59254'
+      },
+      'links': [],
+      'arrival_date_time': '20210223T125300',
+      'additional_informations': [],
+      'departure_date_time': '20210223T125300',
+      'base_arrival_date_time': '20210223T125300',
+      'base_departure_date_time': '20210223T125300'
+    }, {
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '22131'
+        }, {
+          'type': 'external_code',
+          'value': '59251'
+        }, {
+          'type': 'source',
+          'value': '59251'
+        }],
+        'name': 'Raspail',
+        'links': [],
+        'coord': {
+          'lat': '48.839157',
+          'lon': '2.330474'
+        },
+        'label': 'Raspail (Paris)',
+        'equipments': [],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59251'
+      },
+      'links': [],
+      'arrival_date_time': '20210223T125400',
+      'additional_informations': [],
+      'departure_date_time': '20210223T125400',
+      'base_arrival_date_time': '20210223T125400',
+      'base_departure_date_time': '20210223T125400'
+    }, {
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '463104'
+        }, {
+          'type': 'external_code',
+          'value': '59546'
+        }, {
+          'type': 'source',
+          'value': '59546'
+        }],
+        'name': 'Denfert-Rochereau',
+        'links': [],
+        'coord': {
+          'lat': '48.834277',
+          'lon': '2.332204'
+        },
+        'label': 'Denfert-Rochereau (Paris)',
+        'equipments': [],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59546'
+      },
+      'links': [],
+      'arrival_date_time': '20210223T125500',
+      'additional_informations': [],
+      'departure_date_time': '20210223T125500',
+      'base_arrival_date_time': '20210223T125500',
+      'base_departure_date_time': '20210223T125500'
+    }, {
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '22144'
+        }, {
+          'type': 'external_code',
+          'value': '59260'
+        }, {
+          'type': 'source',
+          'value': '59260'
+        }],
+        'name': 'Mouton-Duvernet',
+        'links': [],
+        'coord': {
+          'lat': '48.832192',
+          'lon': '2.330407'
+        },
+        'label': 'Mouton-Duvernet (Paris)',
+        'equipments': [],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59260'
+      },
+      'links': [],
+      'arrival_date_time': '20210223T125600',
+      'additional_informations': [],
+      'departure_date_time': '20210223T125600',
+      'base_arrival_date_time': '20210223T125600',
+      'base_departure_date_time': '20210223T125600'
+    }, {
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '463118'
+        }, {
+          'type': 'external_code',
+          'value': '59631'
+        }, {
+          'type': 'source',
+          'value': '59631'
+        }],
+        'name': 'Alésia',
+        'links': [],
+        'coord': {
+          'lat': '48.828066',
+          'lon': '2.326827'
+        },
+        'label': 'Alésia (Paris)',
+        'equipments': [],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59631'
+      },
+      'links': [],
+      'arrival_date_time': '20210223T125700',
+      'additional_informations': [],
+      'departure_date_time': '20210223T125700',
+      'base_arrival_date_time': '20210223T125700',
+      'base_departure_date_time': '20210223T125700'
+    }, {
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '22140'
+        }, {
+          'type': 'external_code',
+          'value': '59624'
+        }, {
+          'type': 'source',
+          'value': '59624'
+        }],
+        'name': "Porte d'Orléans (Général Leclerc)",
+        'links': [],
+        'coord': {
+          'lat': '48.822817',
+          'lon': '2.325073'
+        },
+        'label': "Porte d'Orléans (Général Leclerc) (Paris)",
+        'equipments': [],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59624'
+      },
+      'links': [],
+      'arrival_date_time': '20210223T125900',
+      'additional_informations': [],
+      'departure_date_time': '20210223T125900',
+      'base_arrival_date_time': '20210223T125900',
+      'base_departure_date_time': '20210223T125900'
+    }]
+  }, {
+    'from': {
+      'embedded_type': 'stop_point',
+      'stop_point': {
+        'codes': [{
+          'type': 'ZDEr_ID_REF_A',
+          'value': '22140'
+        }, {
+          'type': 'external_code',
+          'value': '59624'
+        }, {
+          'type': 'source',
+          'value': '59624'
+        }],
+        'name': "Porte d'Orléans (Général Leclerc)",
+        'links': [],
+        'coord': {
+          'lat': '48.822817',
+          'lon': '2.325073'
+        },
+        'label': "Porte d'Orléans (Général Leclerc) (Paris)",
+        'equipments': [],
+        'administrative_regions': [{
+          'insee': '75056',
+          'name': 'Paris',
+          'level': 8,
+          'coord': {
+            'lat': '48.856696',
+            'lon': '2.351461'
+          },
+          'label': 'Paris (75000-75116)',
+          'id': 'admin:fr:75056',
+          'zip_code': '75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116'
+        }, {
+          'insee': '75114',
+          'name': 'Paris 14e Arrondissement',
+          'level': 9,
+          'coord': {
+            'lat': '48.833058',
+            'lon': '2.326959'
+          },
+          'label': 'Paris 14e Arrondissement (75014)',
+          'id': 'admin:fr:75114',
+          'zip_code': '75014'
+        }, {
+          'insee': '',
+          'name': 'Quartier du Petit-Montrouge',
+          'level': 10,
+          'coord': {
+            'lat': '48.826652',
+            'lon': '2.326437'
+          },
+          'label': 'Quartier du Petit-Montrouge (75014)',
+          'id': 'admin:osm:relation:2191571',
+          'zip_code': '75014'
+        }],
+        'fare_zone': {
+          'name': '1'
+        },
+        'id': 'stop_point:0:SP:59624',
+        'stop_area': {
+          'codes': [{
+            'type': 'external_code',
+            'value': '59624'
+          }, {
+            'type': 'source',
+            'value': '59624'
+          }],
+          'name': "Porte d'Orléans",
+          'links': [],
+          'coord': {
+            'lat': '48.822487',
+            'lon': '2.325488'
+          },
+          'label': "Porte d'Orléans (Paris)",
+          'timezone': 'Europe/Paris',
+          'id': 'stop_area:0:SA:59624'
+        }
+      },
+      'quality': 0,
+      'name': "Porte d'Orléans (Général Leclerc) (Paris)",
+      'id': 'stop_point:0:SP:59624'
+    },
+    'links': [],
+    'arrival_date_time': '20210223T125936',
+    'co2_emission': {
+      'value': 0.0,
+      'unit': ''
+    },
+    'to': {
+      'embedded_type': 'address',
+      'distance': '0',
+      'name': '6 Place du 25 Août 1944 (Paris)',
+      'address': {
+        'name': '6 Place du 25 Août 1944',
+        'house_number': 6,
+        'coord': {
+          'lat': '48.822566',
+          'lon': '2.324888'
+        },
+        'label': '6 Place du 25 Août 1944 (Paris)',
+        'administrative_regions': [{
+          'insee': '',
+          'name': 'Quartier du Petit-Montrouge',
+          'level': 10,
+          'coord': {
+            'lat': '48.8266515747',
+            'lon': '2.32643702777'
+          },
+          'label': 'Quartier du Petit-Montrouge (75014), Paris 14e Arrondissement, Paris, Île-de-France, France',
+          'id': 'admin:osm:relation:2191571',
+          'zip_code': '75014'
+        }, {
+          'insee': '75056',
+          'name': 'Paris',
+          'level': 8,
+          'coord': {
+            'lat': '48.8566969',
+            'lon': '2.3514616'
+          },
+          'label': 'Paris (75000-75116), Île-de-France, France',
+          'id': 'admin:fr:75056',
+          'zip_code': '75000-75116'
+        }, {
+          'insee': '75',
+          'name': 'Paris',
+          'level': 6,
+          'coord': {
+            'lat': '48.8566969',
+            'lon': '2.3514616'
+          },
+          'label': 'Paris, Île-de-France, France',
+          'id': 'admin:osm:relation:71525'
+        }, {
+          'insee': '11',
+          'name': 'Île-de-France',
+          'level': 4,
+          'coord': {
+            'lat': '48.8566969',
+            'lon': '2.3514616'
+          },
+          'label': 'Île-de-France, France',
+          'id': 'admin:osm:relation:8649'
+        }, {
+          'insee': '',
+          'name': 'France',
+          'level': 2,
+          'coord': {
+            'lat': '48.8566969',
+            'lon': '2.3514616'
+          },
+          'label': 'France',
+          'id': 'admin:osm:relation:2202162'
+        }, {
+          'insee': '75114',
+          'name': 'Paris 14e Arrondissement',
+          'level': 9,
+          'coord': {
+            'lat': '48.8330589',
+            'lon': '2.3269591'
+          },
+          'label': 'Paris 14e Arrondissement (75014), Paris, Île-de-France, France',
+          'id': 'admin:osm:relation:9522',
+          'zip_code': '75014'
+        }],
+        'id': '2.324888;48.822566'
+      },
+      'quality': 0,
+      'id': '2.324888;48.822566'
+    },
+    'departure_date_time': '20210223T125900',
+    'geojson': {
+      'type': 'LineString',
+      'properties': [{
+        'length': 40
+      }],
+      'coordinates': [
+        [2.3250702676, 48.8228176587],
+        [2.3250029253, 48.8225382964]
+      ]
+    },
+    'duration': 36,
+    'path': [{
+      'duration': 36,
+      'length': 40,
+      'direction': 0,
+      'name': 'Place du 25 Août 1944'
+    }],
+    'type': 'street_network',
+    'id': 'hSupsCbquE4jXziRWvuTvi_0',
+    'mode': 'walking'
+  }]
+}

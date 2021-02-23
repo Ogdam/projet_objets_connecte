@@ -1,0 +1,23 @@
+{"intents":[
+        {"tag":"hello",
+         "patterns":["Bonjour", "Wech", "slt", "salut", "slm", "salem", "salam"],
+         "responses":["Bonjour", "Salem", "Salut"],
+         "context_set":""
+        },
+        {"tag":"name",
+         "patterns":["Comment tu t'appelles?", "Quelle est ton nom?", "C'est quoi ton nom?", "C'est quoi ton blaze?"],
+         "responses":["Mon nom est Merry", "Je m'appelle Merry", "Moi c'est Merry"],
+         "context_set":""
+        },
+        {"tag":"greeting",
+            "patterns":["Comment vas-tu?", "Bien ou quoi?", "Tu vas bien?", "Tranquille ou quoi?"],
+            "responses":["Hamdoula, bien merci", "Je vais bien, merci", "Tranquillement"],
+            "context_set":""
+        },
+        {"tag":"unknow",
+            "patterns":[""],
+            "responses":["Je ne comprend pas"],
+            "context_set":""
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{"intents":[
+        {   "tag":"wikipedia",
+            "patterns":["Qu'est ce que (.*)",
+                        "Qui est (.*)", 
+                        "Qu'est ce qu'un (.*)", 
+                        "Qu'est ce qu'une (.*)"],
+            "responses":["wiki reponse"],
+            "context_set":""
+        }
+    ]
+}

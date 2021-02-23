@@ -1,0 +1,8 @@
+{"intents":[
+    {"tag":"meteo",
+        "patterns":["Quelle temps fait-il?", "Donne moi la météo"],
+        "responses":["météo"],
+        "context_set":""
+    }
+]
+}
