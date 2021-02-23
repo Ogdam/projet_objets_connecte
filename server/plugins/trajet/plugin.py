@@ -30,13 +30,13 @@ class PluginTrajet:
         location = geolocator.geocode(address)
         elat, elong = location.latitude, location.longitude
 
-        e = "https://api.navitia.io/v1/coverage/fr-idf/journeys?key=88ede902-31c0-497b-a589-dff13c603a58&from={0}%3B{1}&to={2}%3B{3}&".format(
-            dlong, dlat, elong, elat)
-
-        r = requests.get(e)
-        r = r.json()
-
-        trajet = r['journeys'][0]
-        trajet.pop('links')
-        trajet.pop('calendars')
-        return trajet
+        try :
+            e = "https://api.navitia.io/v1/coverage/fr-idf/journeys?key=88ede902-31c0-497b-a589-dff13c603a58&from={0}%3B{1}&to={2}%3B{3}&".format(
+                dlong, dlat, elong, elat)
+            r = requests.get(e)
+            r = r.json()
+            trajet = r['journeys'][0]
+            trajet.pop('calendars')
+            return trajet
+        except :
+            return []
