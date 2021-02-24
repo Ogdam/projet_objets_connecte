@@ -5,10 +5,10 @@ import { Text, View } from '../components/Themed';
 import { GiftedChat, IMessage } from 'react-native-gifted-chat'
 
 export default class ChatScreen extends React.Component {
-  socket = new WebSocket('ws://192.168.1.133:8765');
+  socket = new WebSocket('ws://localhost:8765');
   state  = { messages: [], messageId:1 };
 
-  componentDidMount(){    
+  componentDidMount(){
     var self= this
     this.socket.onmessage= function(this: WebSocket, ev: MessageEvent){
       var id= self.state.messageId+1
@@ -21,11 +21,12 @@ export default class ChatScreen extends React.Component {
   }
 
   handleSubmit(previousMessages: IMessage[]){
+    console.log(previousMessages)
     this.socket.send(previousMessages[0].text)
     this.setState({messages: GiftedChat.prepend(previousMessages, this.state.messages)})
   }
 
-  
+
 
   createBotMessage(message: string){
     var id= '_' + Math.random().toString(36).substr(2, 9);
