@@ -32,36 +32,40 @@ class PluginTrajet:
         location = geolocator.geocode(word)
         elat, elng = location.latitude, location.longitude
 
+        trajet = []
+
         try :
             e = "https://api.navitia.io/v1/coverage/fr-idf/journeys?key=88ede902-31c0-497b-a589-dff13c603a58&from={0}%3B{1}&to={2}%3B{3}&".format(
                 dlng, dlat, elng, elat)
             r = requests.get(e)
             r = r.json()
 
-            trajet = r['journeys'][0]
-            trajet = self.makeReadableTransport(trajet)
+            t = r['journeys'][0]
+            trajet = self.makeReadableTransport(t)
 
             return trajet
         except :
-            return []
+            return trajet
 
 
     def makeReadableTransport(self, transport):
         etape = []
-        for sct in transport['sections']:
-            section = {}
-            if  sct['type'] == "street_network":
-                section.update({'type' : 'walking'})
-                section.update({'path' : sct['path']})
-            elif sct['type'] == "public_transport"  :
-                section.update({'type' : sct['display_informations']['physical_mode']})
-                section.update({'direction' : sct['display_informations']['direction']})
-                section.update({'label' : sct['display_informations']['label']})
-            elif sct['type'] == 'transfer' :
-                section.update({'type' : 'tranfer'})
-            section.update({'from' : sct['from']['name']})
-            section.update({'to' : sct['to']['name']})
+        try :
+            for sct in transport['sections']:
+                section = {}
+                if  sct['type'] == "street_network":
+                    section.update({'type' : 'walking'})
+                    section.update({'path' : sct['path']})
+                elif sct['type'] == "public_transport"  :
+                    section.update({'type' : sct['display_informations']['physical_mode']})
+                    section.update({'direction' : sct['display_informations']['direction']})
+                    section.update({'label' : sct['display_informations']['label']})
+                elif sct['type'] == 'transfer' :
+                    section.update({'type' : 'tranfer'})
+                section.update({'from' : sct['from']['name']})
+                section.update({'to' : sct['to']['name']})
 
-            etape.append(section)
-
+                etape.append(section)
+        except Exception as e:
+            pass
         return etape
