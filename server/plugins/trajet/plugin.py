@@ -3,6 +3,7 @@ import os
 import re
 import geocoder
 from geopy.geocoders import Nominatim
+import json
 
 class PluginTrajet:
 
@@ -43,8 +44,8 @@ class PluginTrajet:
             t = r['journeys'][0]
             trajet = self.makeReadableTransport(t)
 
-            return trajet
-        except :
+            return json.dumps(trajet)
+        except Exception as e:
             return trajet
 
 
