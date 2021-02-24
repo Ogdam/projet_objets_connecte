@@ -1,11 +1,11 @@
 {"intents":[
         {   "tag":"trajet",
-            "patterns":["quel est le trajet pour aller à (.*)",
-                        "comment aller à (.*)",
-                        "comment aller a (.*)",
-                        "trajet pour (.*)",
-                        "aller a (.*)",
-                        "aller à (.*)"
+            "patterns":["quel est le trajet pour aller de (.*) à (.*)",
+                        "comment aller de (.*) à (.*)",
+                        "comment aller de (.*) a (.*)",
+                        "trajet pour (.*) a (.*)",
+                        "aller de (.*) a (.*)",
+                        "aller de (.*) à (.*)"
                        ],
             "responses":["trajet reponse"],
             "context_set":""
