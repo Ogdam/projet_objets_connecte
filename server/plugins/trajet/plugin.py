@@ -41,7 +41,6 @@ class PluginTrajet:
         try :
             e = "https://api.navitia.io/v1/coverage/fr-idf/journeys?key=88ede902-31c0-497b-a589-dff13c603a58&from={0}%3B{1}&to={2}%3B{3}&".format(
                 dlng, dlat, elng, elat)
-            print(e)
             r = requests.get(e)
             r = r.json()
             t = r['journeys'][0]
@@ -68,8 +67,22 @@ class PluginTrajet:
                     section.update({'label' : sct['display_informations']['label']})
                 elif sct['type'] == 'transfer' :
                     section.update({'type' : 'tranfer'})
-                section.update({'from' : sct['from']['name']})
-                section.update({'to' : sct['to']['name']})
+                    continue
+
+
+                section.update({'from' : []})
+                print(sct['type'])
+                if sct['type'] == 'public_transport' :
+                    print(1)
+                    section['from'].append({'name' : sct['from']['name'], 'lat': sct['from']['stop_point']['coord']['lat'] , 'lng': sct['from']['stop_point']['coord']['lon']} )
+                else :
+                    print(2)
+                    section['from'].append({'name' : sct['from']['name'], 'lat': sct['from']['address']['coord']['lat'] , 'lng': sct['from']['address']['coord']['lon']} )
+
+                print(3)
+                section.update({'to' : []})
+                section['to'].append({'name' : sct['to']['name'], 'lat': sct['to']['stop_point']['coord']['lat'] , 'lng': sct['to']['stop_point']['coord']['lon']} )
+
                 a = []
                 a.append(section)
                 etape.append(section)

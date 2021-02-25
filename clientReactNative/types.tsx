@@ -17,6 +17,11 @@ export type ChatParamList = {
   ChatScreen: undefined;
 };
 
+export type MapParamList = {
+  MapScreen: undefined;
+};
+
+
 export type ConfigParamList = {
   ConfigScreen: undefined;
 };

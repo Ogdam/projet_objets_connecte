@@ -16,8 +16,11 @@ model.load("data/model.tflearn")
 def chat(message):
         inp = message
         results = model.predict([bag_of_words(inp, words)])
+        print(results)
         results_index = numpy.argmax(results)
+        print(labels)
         tag = labels[results_index]
+        print(tag)
         args= getInputArgs(data, tag, inp)
         plugin = PluginFactory.getPlugin(tag)
         if plugin!=None:

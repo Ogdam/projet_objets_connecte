@@ -7,7 +7,9 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import HomeScreen from '../screens/HomeScreen';
 import ChatScreen from '../screens/ChatScreen';
-import { BottomTabParamList, HomeParamList, ChatParamList, ConfigParamList } from '../types';
+import MapScreen from '../screens/MapScreen';
+
+import { BottomTabParamList, HomeParamList, ChatParamList, ConfigParamList, MapParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -28,6 +30,13 @@ export default function BottomTabNavigator() {
       <BottomTab.Screen
         name="Chat"
         component={ChatNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Map"
+        component={MapNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
@@ -69,5 +78,20 @@ function ChatNavigator() {
         options={{ headerTitle: 'MerryHome - chat' }}
       />
     </ChatStack.Navigator>
+  );
+}
+
+const MapStack = createStackNavigator<MapParamList>();
+
+
+function MapNavigator() {
+  return (
+    <MapStack.Navigator>
+      <MapStack.Screen
+        name="MapScreen"
+        component={MapScreen}
+        options={{ headerTitle: 'MerryHome - map' }}
+      />
+    </MapStack.Navigator>
   );
 }
