@@ -89,3 +89,34 @@ class PluginTrajet:
         except Exception as e:
             print(e)
         return etape
+
+    def getBestCarRoute(self, word):
+        # get local position
+        word[0] = word[0].replace('_', ' ')
+        geolocator = Nominatim(user_agent="Your_Name")
+        location = geolocator.geocode(word[0])
+        dlat, dlng = location.latitude, location.longitude
+
+        # get dist position
+        word[1] = word[1].replace('_', ' ')
+        geolocator = Nominatim(user_agent="Your_Name")
+        location = geolocator.geocode(word[1])
+        elat, elng = location.latitude, location.longitude
+
+        trajet = []
+        try :
+            e = "https://route.ls.hereapi.com/routing/7.2/calculateroute.json"
+                +"?apiKey=dE3hg0qKh-fkPGqNWKgWIUE2KHNqfdyQHH6fJQJQX94"
+                +"&waypoint0=geo!{0},{1}"
+                +"&waypoint1=geo!{2},{3}"
+                +"&mode=fastest;car;traffic:disabled"
+                +"&language=fr-fr".format(dlat, dlng, elat, elng)
+            r = requests.get(e)
+            #r = r.json()
+            #t = r['journeys'][0]
+            #trajet = self.makeReadableTransport(t)
+
+            #return json.dumps(trajet)
+            return r
+        except :
+            return trajet
