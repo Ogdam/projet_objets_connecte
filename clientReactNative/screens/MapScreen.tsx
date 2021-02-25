@@ -1,15 +1,16 @@
 import React, { useState, useCallback, useEffect } from 'react'
-import { Button, NativeSyntheticEvent, StyleSheet, TextInput, TextInputSubmitEditingEventData } from 'react-native';
+import { Button, NativeSyntheticEvent, Switch, StyleSheet, TextInput, TextInputSubmitEditingEventData } from 'react-native';
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { GiftedChat, IMessage } from 'react-native-gifted-chat'
 import MapView, {Polyline, Marker} from 'react-native-maps';
 import { Dimensions } from "react-native";
+import { Icon } from 'react-native-elements'
 
 export default class MapScreen extends React.Component {
 
   socket = new WebSocket('ws://192.168.1.91:8765');
-  state  = { depart: "" , arrive : "", trajet : []};
+  state  = { depart: "" , arrive : "", trajet : [], choice : true};
 
   componentDidMount(){
     var self = this
@@ -49,8 +50,38 @@ export default class MapScreen extends React.Component {
           })
          }
         </MapView>
-        <View>
-          <TextInput/>
+        <View style={styles.trajet}>
+          <Switch
+              trackColor={{ false: "#767577", true: "#81b0ff" }}
+              thumbColor={this.state.choice ? "#f5dd4b" : "#f4f3f4"}
+              ios_backgroundColor="#3e3e3e"
+              onValueChange={() => this.setState({choice : !this.state.choice})}
+              value={this.state.choice}
+            />
+          {this.state.choice &&
+            <View>
+             {this.state.trajet.map((marker : any) => {
+               if (marker['type'] == "walking"){
+                 <Text style={styles.text}>Marcher</Text>
+                  marker['path'].map((walk: any) => {
+                    <Text style={styles.text}>  - { walk['name']} </Text>
+                  })
+               }
+               if (marker['type'] == "métro"){
+                 <View>
+                  <Text style={styles.text}>Métro ligne {marker['label']}</Text>
+                  <Text style={styles.text}>de : {marker['from']['name']}</Text>
+                  <Text style={styles.text}>a : {marker['to']['name']}</Text>
+                 </View>
+               }
+              })
+             }
+            </View>
+          }
+          {!this.state.choice &&
+            <View>
+            </View>
+          }
         </View>
         <View style={styles.message}>
             <TextInput
@@ -97,7 +128,14 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    bottom: 500,
+    bottom: Dimensions.get('window').height-350,
+  },
+  trajet : {
+    position : 'absolute',
+    top : Dimensions.get('window').height-565,
+    width : Dimensions.get('window').width,
+    height : Dimensions.get('window').width-35,
+    backgroundColor : "white"
   },
   message : {
     position: 'absolute',
@@ -124,6 +162,12 @@ const styles = StyleSheet.create({
     bottom:
     20,
     left : Dimensions.get('window').width-40
+  },
+  text: {
+    color : 'black',
+    fontSize: 20,
+    fontWeight: "bold",
+    position : "absolute",
 
   }
 });
