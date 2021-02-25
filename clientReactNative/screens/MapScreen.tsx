@@ -50,7 +50,7 @@ export default class MapScreen extends React.Component {
          }
         </MapView>
         <View>
-        // mettre trajet txt
+          <TextInput/>
         </View>
         <View style={styles.message}>
             <TextInput
