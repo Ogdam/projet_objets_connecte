@@ -38,9 +38,10 @@ class PluginTrajet:
             elat, elng = location.latitude, location.longitude
 
             trajet = []
-            
+
             e = "https://api.navitia.io/v1/coverage/fr-idf/journeys?key=88ede902-31c0-497b-a589-dff13c603a58&from={0}%3B{1}&to={2}%3B{3}&".format(
                 dlng, dlat, elng, elat)
+            print(e)
             r = requests.get(e)
             r = r.json()
             t = r['journeys'][0]
@@ -61,7 +62,6 @@ class PluginTrajet:
                 elif  sct['type'] == "street_network":
                     section.update({'type' : 'walking'})
                     section.update({'path' : sct['path']})
-                    section.update({'coord' : sct['geojson']['coordinates']})
                 elif sct['type'] == "public_transport"  :
                     section.update({'type' : sct['display_informations']['physical_mode']})
                     section.update({'direction' : sct['display_informations']['direction']})
@@ -70,37 +70,42 @@ class PluginTrajet:
                     section.update({'type' : 'tranfer'})
                     continue
 
+                section.update({'coord' : sct['geojson']['coordinates']})
 
-
-                if sct['type'] == 'public_transport' :
-                    section.update({'from' : {'name' : sct['from']['name'], 'lat': sct['from']['stop_point']['coord']['lat'] , 'lng': sct['from']['stop_point']['coord']['lon']}})
-                else :
+                try :
                     section.update({'from' : {'name' : sct['from']['name'], 'lat': sct['from']['address']['coord']['lat'] , 'lng': sct['from']['address']['coord']['lon']}})
+                except :
+                    section.update({'from' : {'name' : sct['from']['name'], 'lat': sct['from']['stop_point']['coord']['lat'] , 'lng': sct['from']['stop_point']['coord']['lon']}})
 
-                section.update({'to' : {'name' : sct['to']['name'], 'lat': sct['to']['stop_point']['coord']['lat'] , 'lng': sct['to']['stop_point']['coord']['lon']}})
-
+                try :
+                    section.update({'to' : {'name' : sct['to']['name'], 'lat': sct['to']['stop_point']['coord']['lat'] , 'lng': sct['to']['stop_point']['coord']['lon']}})
+                except :
+                    section.update({'to' : {'name' : sct['to']['name'], 'lat': sct['to']['address']['coord']['lat'] , 'lng': sct['to']['address']['coord']['lon']}})
                 a = []
                 a.append(section)
                 etape.append(section)
         except Exception as e:
             print(e)
+            print(sct['type'])
         return etape
 
     def getBestCarRoute(self, word):
-        # get local position
-        word[0] = word[0].replace('_', ' ')
-        geolocator = Nominatim(user_agent="Your_Name")
-        location = geolocator.geocode(word[0])
-        dlat, dlng = location.latitude, location.longitude
-
-        # get dist position
-        word[1] = word[1].replace('_', ' ')
-        geolocator = Nominatim(user_agent="Your_Name")
-        location = geolocator.geocode(word[1])
-        elat, elng = location.latitude, location.longitude
-
-        trajet = []
         try :
+
+            # get local position
+            word[0] = word[0].replace('_', ' ')
+            geolocator = Nominatim(user_agent="Your_Name")
+            location = geolocator.geocode(word[0])
+            dlat, dlng = location.latitude, location.longitude
+
+            # get dist position
+            word[1] = word[1].replace('_', ' ')
+            geolocator = Nominatim(user_agent="Your_Name")
+            location = geolocator.geocode(word[1])
+            elat, elng = location.latitude, location.longitude
+
+            trajet = []
+
             e = "https://route.ls.hereapi.com/routing/7.2/calculateroute.json?apiKey=dE3hg0qKh-fkPGqNWKgWIUE2KHNqfdyQHH6fJQJQX94&waypoint0=geo!{0},{1}&waypoint1=geo!{2},{3}&mode=fastest;car;traffic:disabled&language=fr-fr".format(dlat, dlng, elat, elng)
             r = requests.get(e)
             r = r.json()

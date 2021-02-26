@@ -70,12 +70,9 @@ export default class MapScreen extends React.Component {
           var rgb = this.random_rgba()
           var coord: any = [];
           coord.push({'latitude' : Number(marker.from.lat), 'longitude' : Number(marker.from.lng)})
-          if(marker.type == 'walking'){
-                marker.coord.forEach((co : any) =>{
-                  coord.push({'latitude' : Number(co[1]), 'longitude' : Number(co[0]) } )
-                }
-              )
-          }
+          marker.coord.forEach((co : any) =>{
+            coord.push({'latitude' : Number(co[1]), 'longitude' : Number(co[0]) } )
+          })
           coord.push({'latitude' : Number(marker.to.lat), 'longitude' : Number(marker.to.lng)})
           console.log(coord)
           return <Polyline key={"p1"+index}
