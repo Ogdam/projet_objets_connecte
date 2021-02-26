@@ -25,20 +25,20 @@ class PluginTrajet:
         return "_".join(tab)
 
     def getPublicTransportBest(self, word):
-        # get local position
-        word[0] = word[0].replace('_', ' ')
-        geolocator = Nominatim(user_agent="Your_Name")
-        location = geolocator.geocode(word[0])
-        dlat, dlng = location.latitude, location.longitude
-
-        # get dist position
-        word[1] = word[1].replace('_', ' ')
-        geolocator = Nominatim(user_agent="Your_Name")
-        location = geolocator.geocode(word[1])
-        elat, elng = location.latitude, location.longitude
-
-        trajet = []
         try :
+            # get local position
+            word[0] = word[0].replace('_', ' ')
+            geolocator = Nominatim(user_agent="Your_Name")
+            location = geolocator.geocode(word[0])
+            dlat, dlng = location.latitude, location.longitude
+
+            # get dist position
+            word[1] = word[1].replace('_', ' ')
+            location = geolocator.geocode(word[1])
+            elat, elng = location.latitude, location.longitude
+
+            trajet = []
+            
             e = "https://api.navitia.io/v1/coverage/fr-idf/journeys?key=88ede902-31c0-497b-a589-dff13c603a58&from={0}%3B{1}&to={2}%3B{3}&".format(
                 dlng, dlat, elng, elat)
             r = requests.get(e)
@@ -61,6 +61,7 @@ class PluginTrajet:
                 elif  sct['type'] == "street_network":
                     section.update({'type' : 'walking'})
                     section.update({'path' : sct['path']})
+                    section.update({'coord' : sct['geojson']['coordinates']})
                 elif sct['type'] == "public_transport"  :
                     section.update({'type' : sct['display_informations']['physical_mode']})
                     section.update({'direction' : sct['display_informations']['direction']})
@@ -70,18 +71,13 @@ class PluginTrajet:
                     continue
 
 
-                section.update({'from' : []})
-                print(sct['type'])
-                if sct['type'] == 'public_transport' :
-                    print(1)
-                    section['from'].append({'name' : sct['from']['name'], 'lat': sct['from']['stop_point']['coord']['lat'] , 'lng': sct['from']['stop_point']['coord']['lon']} )
-                else :
-                    print(2)
-                    section['from'].append({'name' : sct['from']['name'], 'lat': sct['from']['address']['coord']['lat'] , 'lng': sct['from']['address']['coord']['lon']} )
 
-                print(3)
-                section.update({'to' : []})
-                section['to'].append({'name' : sct['to']['name'], 'lat': sct['to']['stop_point']['coord']['lat'] , 'lng': sct['to']['stop_point']['coord']['lon']} )
+                if sct['type'] == 'public_transport' :
+                    section.update({'from' : {'name' : sct['from']['name'], 'lat': sct['from']['stop_point']['coord']['lat'] , 'lng': sct['from']['stop_point']['coord']['lon']}})
+                else :
+                    section.update({'from' : {'name' : sct['from']['name'], 'lat': sct['from']['address']['coord']['lat'] , 'lng': sct['from']['address']['coord']['lon']}})
+
+                section.update({'to' : {'name' : sct['to']['name'], 'lat': sct['to']['stop_point']['coord']['lat'] , 'lng': sct['to']['stop_point']['coord']['lon']}})
 
                 a = []
                 a.append(section)

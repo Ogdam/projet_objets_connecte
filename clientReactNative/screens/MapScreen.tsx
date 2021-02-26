@@ -5,7 +5,6 @@ import { Text, View } from '../components/Themed';
 import { GiftedChat, IMessage } from 'react-native-gifted-chat'
 import MapView, {Polyline, Marker} from 'react-native-maps';
 import { Dimensions } from "react-native";
-import { Icon } from 'react-native-elements'
 
 export default class MapScreen extends React.Component {
 
@@ -27,22 +26,29 @@ export default class MapScreen extends React.Component {
     this.socket.send("Aller de "+this.state.depart+" a "+this.state.arrive)
   }
 
+  random_rgba() {
+    var o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + 1 + ')';
+  }
+
   transport(){
     return ( <View>
       <Text style={styles.text}>Public Transport</Text>
-      { this.state.trajet.transport.forEach((marker : any, indext: Number) => {
+      {this.state.trajet.transport.map((marker : any, indext: Number) => {
         if (marker.type == "walking"){
-            <Text key={"type"+indext} >{marker.type}</Text>
-            marker['path'].forEach((walk: any, index:any) => {
-              <Text style={styles.text} key={"walk"+index} >  - { walk.name } </Text>
+            <Text style={styles.text} key={"type"+indext} >{marker.type}</Text>
+            return marker['path'].map((walk: any, index : Number) => {
+              return <Text style={styles.text} key={"walk"+index} > - marcher { walk.name } </Text>
             })
+
         }
         if (marker['type'] !== "walking"){
+          return(
           <View>
-            <Text style={styles.text} key={"type"+indext} >Métro ligne {marker.label}</Text>
-            <Text style={styles.text} key={"from"+indext} >de : {marker['from']['name']}</Text>
-            <Text style={styles.text} key={"to"+indext}   >a : {marker['to']['name']}</Text>
-          </View>
+            <Text style={styles.text} key={"type"+indext} >{marker.type} ligne {marker.label}</Text>
+            <Text style={styles.text} key={"from"+indext} > - de : {marker.from.name}</Text>
+            <Text style={styles.text} key={"to"+indext}   > - a : {marker.to.name}</Text>
+          </View>)
         }
       })}
       </View>
@@ -52,7 +58,7 @@ export default class MapScreen extends React.Component {
   render(){
     return (
       <View style={styles.container}>
-      <MapView
+      <MapView key="map"
           style={styles.map}
           initialRegion={{
           latitude: 48.8534,
@@ -61,23 +67,33 @@ export default class MapScreen extends React.Component {
           longitudeDelta: 0.0421,
         }}>
         {this.state.choice && this.state.trajet['transport'].map((marker : any, index) => {
-          <Polyline key={"p1"+index}
-            coordinates={[ {'latitude' : Number(marker['from'][0]['lat']), 'longitude' : Number(marker['from'][0]['lng'])},
-                           {'latitude' : Number(marker['to'][0]['lat']), 'longitude' : Number(marker['to'][0]['lng'])}
-                         ]}
-             strokeWidth={1}
-             strokeColor="red"
+          var rgb = this.random_rgba()
+          var coord: any = [];
+          coord.push({'latitude' : Number(marker.from.lat), 'longitude' : Number(marker.from.lng)})
+          if(marker.type == 'walking'){
+                marker.coord.forEach((co : any) =>{
+                  coord.push({'latitude' : Number(co[1]), 'longitude' : Number(co[0]) } )
+                }
+              )
+          }
+          coord.push({'latitude' : Number(marker.to.lat), 'longitude' : Number(marker.to.lng)})
+          console.log(coord)
+          return <Polyline key={"p1"+index}
+            coordinates={coord}
+             strokeWidth={3}
+             strokeColor= {rgb}
              fillColor="rgba(255,0,0,0.5)"
           />
         })
        }
        {!this.state.choice && this.state.trajet['car'].map((marker : any, index) => {
-         <Polyline key={"p2"+index}
-           coordinates={[ {'latitude' : Number(marker['from'][0]['lat']), 'longitude' : Number(marker['from'][0]['lng'])},
-                          {'latitude' : Number(marker['to'][0]['lat']), 'longitude' : Number(marker['to'][0]['lng'])}
+         var rgb = this.random_rgba()
+         return <Polyline key={"p2"+index}
+           coordinates={[ {'latitude' : Number(marker.from.lat), 'longitude' : Number(marker.from.lng)},
+                          {'latitude' : Number(marker.to.lat), 'longitude' : Number(marker.to.lng)}
                         ]}
-            strokeWidth={1}
-            strokeColor="red"
+            strokeWidth={3}
+            strokeColor= {rgb}
             fillColor="rgba(255,0,0,0.5)"
          />
        })
@@ -183,9 +199,7 @@ const styles = StyleSheet.create({
   text: {
     color : 'black',
     backgroundColor : "white",
-    fontSize: 20,
+    fontSize: 10,
     fontWeight: "bold",
-    position : "absolute",
-
   }
 });
