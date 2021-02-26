@@ -105,14 +105,9 @@ class PluginTrajet:
 
         trajet = []
         try :
-            e = "https://route.ls.hereapi.com/routing/7.2/calculateroute.json"
-                +"?apiKey=dE3hg0qKh-fkPGqNWKgWIUE2KHNqfdyQHH6fJQJQX94"
-                +"&waypoint0=geo!{0},{1}"
-                +"&waypoint1=geo!{2},{3}"
-                +"&mode=fastest;car;traffic:disabled"
-                +"&language=fr-fr".format(dlat, dlng, elat, elng)
+            e = "https://route.ls.hereapi.com/routing/7.2/calculateroute.json?apiKey=dE3hg0qKh-fkPGqNWKgWIUE2KHNqfdyQHH6fJQJQX94&waypoint0=geo!{0},{1}&waypoint1=geo!{2},{3}&mode=fastest;car;traffic:disabled&language=fr-fr".format(dlat, dlng, elat, elng)
             r = requests.get(e)
-            #r = r.json()
+            r = r.json()
             #t = r['journeys'][0]
             #trajet = self.makeReadableTransport(t)
 

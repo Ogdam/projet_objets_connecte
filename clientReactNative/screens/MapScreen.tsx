@@ -10,12 +10,12 @@ import { Icon } from 'react-native-elements'
 export default class MapScreen extends React.Component {
 
   socket = new WebSocket('ws://192.168.1.91:8765');
-  state  = { depart: "" , arrive : "", trajet : [], choice : true};
+  state  = { depart: "" , arrive : "", trajet : {'transport' : [], 'car' : []}, choice : true};
 
   componentDidMount(){
     var self = this
     this.socket.onmessage = function(this: WebSocket, ev: MessageEvent){
-      self.setState({ trajet: JSON.parse(ev.data) });
+      self.setState({ trajet: { 'transport' : JSON.parse(ev.data), "car" : []} });
     };
   }
 
@@ -27,29 +27,62 @@ export default class MapScreen extends React.Component {
     this.socket.send("Aller de "+this.state.depart+" a "+this.state.arrive)
   }
 
+  transport(){
+    return ( <View>
+      <Text style={styles.text}>Public Transport</Text>
+      { this.state.trajet.transport.forEach((marker : any, indext: Number) => {
+        if (marker.type == "walking"){
+            <Text key={"type"+indext} >{marker.type}</Text>
+            marker['path'].forEach((walk: any, index:any) => {
+              <Text style={styles.text} key={"walk"+index} >  - { walk.name } </Text>
+            })
+        }
+        if (marker['type'] !== "walking"){
+          <View>
+            <Text style={styles.text} key={"type"+indext} >Métro ligne {marker.label}</Text>
+            <Text style={styles.text} key={"from"+indext} >de : {marker['from']['name']}</Text>
+            <Text style={styles.text} key={"to"+indext}   >a : {marker['to']['name']}</Text>
+          </View>
+        }
+      })}
+      </View>
+    )
+  }
+
   render(){
     return (
       <View style={styles.container}>
-        <MapView
-            style={styles.map}
-            initialRegion={{
-            latitude: 48.8534,
-            longitude: 2.3488,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
-          }}>
-          {this.state.trajet.map((marker : any) => {
-            <Polyline
-              coordinates={[ {'latitude' : Number(marker['from'][0]['lat']), 'longitude' : Number(marker['from'][0]['lng'])},
-                             {'latitude' : Number(marker['to'][0]['lat']), 'longitude' : Number(marker['to'][0]['lng'])}
-                           ]}
-               strokeWidth={1}
-               strokeColor="red"
-               fillColor="rgba(255,0,0,0.5)"
-            />
-          })
-         }
-        </MapView>
+      <MapView
+          style={styles.map}
+          initialRegion={{
+          latitude: 48.8534,
+          longitude: 2.3488,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        }}>
+        {this.state.choice && this.state.trajet['transport'].map((marker : any, index) => {
+          <Polyline key={"p1"+index}
+            coordinates={[ {'latitude' : Number(marker['from'][0]['lat']), 'longitude' : Number(marker['from'][0]['lng'])},
+                           {'latitude' : Number(marker['to'][0]['lat']), 'longitude' : Number(marker['to'][0]['lng'])}
+                         ]}
+             strokeWidth={1}
+             strokeColor="red"
+             fillColor="rgba(255,0,0,0.5)"
+          />
+        })
+       }
+       {!this.state.choice && this.state.trajet['car'].map((marker : any, index) => {
+         <Polyline key={"p2"+index}
+           coordinates={[ {'latitude' : Number(marker['from'][0]['lat']), 'longitude' : Number(marker['from'][0]['lng'])},
+                          {'latitude' : Number(marker['to'][0]['lat']), 'longitude' : Number(marker['to'][0]['lng'])}
+                        ]}
+            strokeWidth={1}
+            strokeColor="red"
+            fillColor="rgba(255,0,0,0.5)"
+         />
+       })
+      }
+      </MapView>
         <View style={styles.trajet}>
           <Switch
               trackColor={{ false: "#767577", true: "#81b0ff" }}
@@ -58,30 +91,14 @@ export default class MapScreen extends React.Component {
               onValueChange={() => this.setState({choice : !this.state.choice})}
               value={this.state.choice}
             />
+          <View>
           {this.state.choice &&
-            <View>
-             {this.state.trajet.map((marker : any) => {
-               if (marker['type'] == "walking"){
-                 <Text style={styles.text}>Marcher</Text>
-                  marker['path'].map((walk: any) => {
-                    <Text style={styles.text}>  - { walk['name']} </Text>
-                  })
-               }
-               if (marker['type'] == "métro"){
-                 <View>
-                  <Text style={styles.text}>Métro ligne {marker['label']}</Text>
-                  <Text style={styles.text}>de : {marker['from']['name']}</Text>
-                  <Text style={styles.text}>a : {marker['to']['name']}</Text>
-                 </View>
-               }
-              })
-             }
-            </View>
+              this.transport()
           }
           {!this.state.choice &&
-            <View>
-            </View>
+              <Text style={styles.text}>Car</Text>
           }
+          </View>
         </View>
         <View style={styles.message}>
             <TextInput
@@ -165,6 +182,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color : 'black',
+    backgroundColor : "white",
     fontSize: 20,
     fontWeight: "bold",
     position : "absolute",
